@@ -1,1 +1,1 @@
-# ZombieDice-Rails_React
+# ZombieDice
