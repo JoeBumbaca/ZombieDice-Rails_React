@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import LoginFormContainer from './session/login_container';
 import SignupFormContainer from './session/signup_container';
@@ -18,7 +19,6 @@ function Modal({ modal, closeModal }) {
     default:
       return null;
   }
-  debugger;
   return (
     <div className='modal-background' onClick={closeModal}>
       <div className='modal-child' onClick={e => e.stopPropagation()}>

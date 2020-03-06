@@ -6,8 +6,20 @@ import {login, logout} from './actions/session_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      session: { currentUser: window.currentUser.id },
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
   const root = document.getElementById("zombie_dice");
-  const store = configureStore();
   ReactDOM.render(<Root store={store}/>, root);
 
   window.login = login;

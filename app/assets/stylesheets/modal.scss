@@ -13,8 +13,48 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
-  width: 300px;
-  border: 2px solid grey;
-  background-color: darkgrey;
+  height: 35%;
+  width: 25%;
+  border: 2px solid red;
+  background-color: black;
+  border-radius: 10px;
+  color: grey;
+  display: flex;
+}
+
+.session-header {
+  font-size: 25px;
+  margin-top: 5px;
+  font-family: 'Bangers', cursive;
+}
+
+.session-input {
+  background-color: grey;
+  border-radius: 5px;
+  margin: 15px 0 0 15px;
+  height: 80%;
+  font-size: 20px;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-button {
+  background-color: grey;
+  border-radius: 5px;
+  border: 1px solid red;
+  margin: 30px;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.session {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Bangers', cursive;
 }
