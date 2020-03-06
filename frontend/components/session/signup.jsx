@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
             Password:
             <input
               className='session-input'
-              type='text'
+              type='password'
               value={this.state.password}
               onChange={this.handleChange('password')}
             />
