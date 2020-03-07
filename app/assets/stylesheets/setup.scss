@@ -1,0 +1,49 @@
+.setup-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  color: red;
+  overflow-x: hidden;
+}
+
+.setup-body {
+  display: flex;
+}
+
+.game-inputs {
+  height: 94.75vh;
+  width: 50%;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.game-parameters {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  height: 94.75vh;
+  width: 50%;
+  text-align: center;
+}
+
+.game-link {
+  text-decoration: none;
+  border: 1px solid red;
+  background-color: red;
+  color: black;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 1%;
+  width: 15%;
+  margin-bottom: 10px;
+}
+
+.game-link:hover {
+    filter: brightness(85%);
+  }

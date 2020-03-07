@@ -1,4 +1,4 @@
-.game {
+.game-container {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -6,4 +6,25 @@
   width: 100vw;
   color: red;
   overflow-x: hidden;
+}
+
+.game {
+  display: flex;
+}
+
+.game-play {
+  height: 94.75vh;
+  width: 65%;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  text-align: center;
+}
+
+.game-chat {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  height: 94.75vh;
+  width: 35%;
+  text-align: center;
 }

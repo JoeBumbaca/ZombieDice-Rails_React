@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(this.props.closeModal()).then(this.props.history.push('/game'));
+    this.props.processForm(this.state).then(this.props.closeModal())
   }
 
   handleChange(field) {

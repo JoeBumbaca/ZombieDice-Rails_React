@@ -17,8 +17,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     this.props
       .processForm(this.state)
-      .then(this.props.closeModal())
-      .then(this.props.history.push('/game'));
+      .then(this.props.closeModal());
   }
 
   handleChange(field) {

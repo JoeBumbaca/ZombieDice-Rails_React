@@ -3,9 +3,12 @@ import HeaderContainer from '../header/header_container';
 
 const Game = () => {
   return(
-    <div className='game'>
+    <div className='game-container'>
       <HeaderContainer />
-      <h4>I am the game</h4>
+      <div className='game'>
+        <div className='game-play'>Play Area</div>
+        <div className='game-chat'>Chat Area</div>
+      </div>
     </div>
   )
 };
