@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SetupPage from './setup';
+import LobbyPage from './lobby';
 
 const MSP = (state) => {
   return ({
@@ -13,4 +13,4 @@ const MDP = (dispatch) => {
   })
 };
 
-export default connect(MSP, MDP)(SetupPage);
+export default connect(MSP, MDP)(LobbyPage);

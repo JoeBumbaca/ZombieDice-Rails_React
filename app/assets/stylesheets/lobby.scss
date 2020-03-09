@@ -1,4 +1,4 @@
-.setup-container {
+.lobby-container {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -8,11 +8,11 @@
   overflow-x: hidden;
 }
 
-.setup-body {
+.lobby-body {
   display: flex;
 }
 
-.game-inputs {
+.channel-index {
   height: 94.75vh;
   width: 50%;
   border-bottom: 1px solid red;
@@ -30,6 +30,9 @@
   height: 94.75vh;
   width: 50%;
   text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .game-link {
@@ -40,7 +43,7 @@
   border-radius: 5px;
   font-size: 20px;
   padding: 1%;
-  width: 15%;
+  width: 25%;
   margin-bottom: 10px;
 }
 

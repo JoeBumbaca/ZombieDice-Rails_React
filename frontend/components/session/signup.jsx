@@ -17,6 +17,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     this.props
       .processForm(this.state)
+      .then()
       .then(this.props.closeModal());
   }
 

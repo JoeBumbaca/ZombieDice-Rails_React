@@ -37,3 +37,4 @@ export const login = formUser => dispatch =>
 
 export const logout = () => dispatch =>
   APIUtil.logout().then(() => dispatch(logoutCurrentUser()));
+

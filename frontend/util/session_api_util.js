@@ -24,3 +24,15 @@ export const logout = () => {
     url: '/api/session'
   }))
 };
+
+// export const createStats = (user_id) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url: '/api/user_stats',
+//     data: {
+//       user_stats: {
+//         user_id
+//       }
+//     }
+//   });
+// }
