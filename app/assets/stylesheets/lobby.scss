@@ -19,7 +19,6 @@
   border-left: 1px solid red;
   text-align: center;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
 }
 
@@ -31,22 +30,5 @@
   width: 50%;
   text-align: center;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
 }
-
-.game-link {
-  text-decoration: none;
-  border: 1px solid red;
-  background-color: red;
-  color: black;
-  border-radius: 5px;
-  font-size: 20px;
-  padding: 1%;
-  width: 25%;
-  margin-bottom: 10px;
-}
-
-.game-link:hover {
-    filter: brightness(85%);
-  }

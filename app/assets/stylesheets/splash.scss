@@ -44,7 +44,7 @@ button:hover {
 }
 
 .splash-body {
-  margin: 3% 0;
+  margin: 3% 0 0 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -66,4 +66,9 @@ button:hover {
   text-align: center;
   font-size: 180%;
   margin-top: 1%;
+}
+
+.splash-footer {
+  display: flex;
+  height: 75%;
 }
