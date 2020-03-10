@@ -25,14 +25,9 @@ export const logout = () => {
   }))
 };
 
-// export const createStats = (user_id) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/api/user_stats',
-//     data: {
-//       user_stats: {
-//         user_id
-//       }
-//     }
-//   });
-// }
+export const fetchUser = (id) => {
+  return ($.ajax({
+    method: 'GET',
+    url: `/api/users/${id}`
+  }))
+};

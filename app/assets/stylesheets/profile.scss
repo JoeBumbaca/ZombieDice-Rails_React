@@ -1,0 +1,56 @@
+.profile-container {
+   background-color: black;
+   height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+.profile {
+  height: 94.75vh;
+  border: 1px solid red;
+}
+
+.profile-name {
+  margin-top: 1%;
+  font-size: 225%;
+}
+
+.stats {
+  color: red;
+  height: 94.75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stat-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80%;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+.stat-item {
+  height: 30%;
+  width: 48%;
+  border: 2px solid red;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 200%;
+}
+
+.profile-images {
+  display: flex;
+  height: 15%;
+  margin-bottom: 1.5%;
+}
+
+.profile-zombie {
+  height: 110%;
+  margin-left: 2%;
+}

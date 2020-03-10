@@ -11,7 +11,6 @@ const usersReducer = (state = {}, action) => {
     case LOGOUT_CURRENT_USER:
         return newState;
     case RECEIVE_CURRENT_USER:
-        debugger;
         newState = Object.assign({}, {
         [action.currentUser.id]: {id: action.currentUser.id, username: action.currentUser.username}
       });

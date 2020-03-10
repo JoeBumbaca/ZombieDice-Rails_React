@@ -38,3 +38,6 @@ export const login = formUser => dispatch =>
 export const logout = () => dispatch =>
   APIUtil.logout().then(() => dispatch(logoutCurrentUser()));
 
+export const getUser = (id) => dispatch => 
+    APIUtil.fetchUser(id)
+      .then(user => dispatch(receiveCurrentUser(user)))

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
   return (
     <div className='nav'>
-      <p>Zombie Dice</p>
+      <Link className='lobby-link' to='/lobby'>Zombie Dice</Link>
       <p>
         Hey, <Link className='profile-link' to='/profile'>{props.user.username}</Link>
         !! Get Them Brains!!!
