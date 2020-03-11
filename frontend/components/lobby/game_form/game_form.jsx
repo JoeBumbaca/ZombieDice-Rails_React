@@ -46,10 +46,10 @@ class GameForm extends React.Component {
         <form className='game-form' onSubmit={this.handleSubmit}>
           <label>
             Game Room Name:
-            <input type='text' value={this.state.name} onChange={this.handleChange('name')}/>
+            <input type='text' className='form-input' value={this.state.name} onChange={this.handleChange('name')} placeholder='Room Name'/>
           </label>
           <label> Number of Players:
-            <select onChange={this.handleChange('num_players')} value={this.state.num_players}>
+            <select className='form-input' onChange={this.handleChange('num_players')} value={this.state.num_players}>
               <option value='2'>2</option>
               <option value='3'>3</option>
               <option value='4'>4</option>
@@ -61,10 +61,12 @@ class GameForm extends React.Component {
               <option value='10'>10</option>
             </select>
           </label>
-          <label>Make Game Private?
-            <input type="checkbox" onChange={this.handleCheck}/>
-          </label>
-          <input type="submit" value='Create Game'/>
+          <div>
+            <label>Check to make Game Private
+              <input className='form-input' type="checkbox"  onChange={this.handleCheck}/>
+            </label>
+          </div>
+          <input className='form-submit' type="submit" value='Create Game'/>
         </form>
       </section>
     );

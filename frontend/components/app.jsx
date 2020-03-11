@@ -11,7 +11,7 @@ const App = () => {
   return(
     <div>
       <Switch>
-        <ProtectedRoute path='/game' component={GameContainer}/>
+        <ProtectedRoute path='/game/:id' component={GameContainer}/>
         <ProtectedRoute path='/lobby' component={LobbyContainer} />
         <ProtectedRoute path='/profile' component={ProfileContainer} />
         <AuthRoute exact path='/' component={SplashContainer} />

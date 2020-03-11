@@ -16,7 +16,7 @@ class GameIndex extends React.Component {
     })
     return (
       <div className='game-list-container'>
-        <h1 className='game-list-header'>Join and Existing Game!</h1>
+        <h1 className='game-list-header'>Join an Existing Game!</h1>
         <div className='game-list'>{gamesList}</div>
       </div>
     );

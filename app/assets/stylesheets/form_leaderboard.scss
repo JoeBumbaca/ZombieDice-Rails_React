@@ -1,0 +1,46 @@
+.game-form-container {
+  border-bottom: 1px solid red;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 170%;
+}
+
+.game-form {
+  height: 85%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: gray;
+  color: black;
+}
+
+.form-input {
+  transform : scale(1.75);
+  margin: 3% 3% 6% 5% ;
+  border-radius: 5px;
+}
+
+.form-submit {
+  width: 35%;
+  background-color: red;
+  border-radius: 5px;
+  font-size: x-large;
+  margin-top: 1%;
+}
+
+.form-submit:hover {
+  cursor: pointer;
+  filter: brightness(85%);
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+}
