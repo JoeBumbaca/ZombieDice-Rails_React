@@ -14,7 +14,7 @@
 
 .channel-index {
   height: 94.75vh;
-  width: 50%;
+  width: 60%;
   border-bottom: 1px solid red;
   border-left: 1px solid red;
   text-align: center;
@@ -22,13 +22,39 @@
   justify-content: center;
 }
 
-.game-parameters {
+.lobby-left {
   border-left: 1px solid red;
   border-right: 1px solid red;
   border-bottom: 1px solid red;
   height: 94.75vh;
-  width: 50%;
+  width: 40%;
   text-align: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.game-list-container {
+  width: 100%;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.game-list-item {
+  border: 2px solid red;
+  background-color: gray;
+  color: black;
+  list-style: none;
+  margin: 1%;
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.game-list-header {
+  font-size: 200%;
 }
