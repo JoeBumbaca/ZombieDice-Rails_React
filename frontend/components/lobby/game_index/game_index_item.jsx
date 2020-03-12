@@ -10,7 +10,7 @@ const GameIndexItem = (props) => {
   };
   return (
     <div className='game-list-item'>
-      <li>{props.game.name}</li>
+      <li className='game-list-name'>{props.game.name}</li>
       <li>Number of Players: {props.game.num_players}</li>
       {/* {props.game.private ? privateGame : ''} */}
       <button className='join-button' onClick={handleClick}>Join Game</button>

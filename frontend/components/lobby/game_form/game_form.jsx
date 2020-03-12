@@ -12,7 +12,6 @@ class GameForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleCheck = this.handleCheck.bind(this);
   };
 
   handleChange(field) {
@@ -22,12 +21,6 @@ class GameForm extends React.Component {
       })
     }
   };
-
-  handleCheck() {
-    this.setState({
-      private: !this.state.private
-    })
-  }
 
   handleSubmit() {
     this.props.createGame(this.state)
@@ -46,10 +39,21 @@ class GameForm extends React.Component {
         <form className='game-form' onSubmit={this.handleSubmit}>
           <label>
             Game Room Name:
-            <input type='text' className='form-input' value={this.state.name} onChange={this.handleChange('name')} placeholder='Room Name'/>
+            <input
+              type='text'
+              className='form-input'
+              value={this.state.name}
+              onChange={this.handleChange('name')}
+              placeholder='Room Name'
+            />
           </label>
-          <label> Number of Players:
-            <select className='form-input' onChange={this.handleChange('num_players')} value={this.state.num_players}>
+          <label>
+            Number of Players:
+            <select
+              className='form-input'
+              onChange={this.handleChange('num_players')}
+              value={this.state.num_players}
+            >
               <option value='2'>2</option>
               <option value='3'>3</option>
               <option value='4'>4</option>
@@ -62,11 +66,30 @@ class GameForm extends React.Component {
             </select>
           </label>
           <div>
-            <label>Check to make Game Private
-              <input className='form-input' type="checkbox"  onChange={this.handleCheck}/>
-            </label>
-          </div>
-          <input className='form-submit' type="submit" value='Create Game'/>
+              <label>
+                Make Game Private?
+                <br/>
+                <label>
+                  Yes!  
+                  <input
+                    type='radio'
+                    name='private'
+                    value='true'
+                    onChange={this.handleChange('private')}
+                  />
+                </label>
+                <label>
+                  No!  
+                  <input
+                    type='radio'
+                    name='private'
+                    value='false'
+                    onChange={this.handleChange('private')}
+                  />
+                </label>
+              </label>
+            </div>
+          <input className='form-submit' type='submit' value='Create Game' />
         </form>
       </section>
     );
