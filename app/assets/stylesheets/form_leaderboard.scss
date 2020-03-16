@@ -74,3 +74,10 @@
   box-sizing: border-box;
   font-size: 150%;
 }
+
+.fastest-win-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+}
