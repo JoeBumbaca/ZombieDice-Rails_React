@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/session_api_util';
 
+export const RECEIVE_LEADERBOARD = 'RECEIVE_LEADERBOARD'
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -23,6 +24,11 @@ export const removeErrors = () => ({
   type: REMOVE_ERRORS
 });
 
+export const receiveLeaderboard = leaders => ({
+  type: RECEIVE_LEADERBOARD,
+  leaders
+})
+
 export const createNewUser = formUser => dispatch =>
   APIUtil.signup(formUser).then(
     user => dispatch(receiveCurrentUser(user)),
@@ -41,3 +47,7 @@ export const logout = () => dispatch =>
 export const getUser = (id) => dispatch => 
     APIUtil.fetchUser(id)
       .then(user => dispatch(receiveCurrentUser(user)))
+
+export const getLeaders = () => dispatch => 
+    APIUtil.fetchLeaders()
+      .then(leaders => dispatch(receiveLeaderboard(leaders)))

@@ -53,6 +53,7 @@
   width: 80%;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   color: goldenrod;
 }
 
@@ -61,18 +62,20 @@
 }
 
 .fastest-win {
-  border-right: 2px solid red;
-  height: 100%;
-  width: 50%;
+  border-bottom: 2px solid red;
+  height: 50%;
+  width: 100%;
   box-sizing: border-box;
   font-size: 150%;
+  padding-top: 1%;
 }
 
 .most-brains {
-  height: 100%;
-  width: 50%;
+  height: 50%;
+  width: 100%;
   box-sizing: border-box;
   font-size: 150%;
+  padding-top: 1%;
 }
 
 .fastest-win-grid {
@@ -83,6 +86,5 @@
 }
 
 .grid-header {
-  border: 2px solid black;
-  padding: 2% 3%;
+  color: black;
 }

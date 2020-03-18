@@ -11,6 +11,10 @@ class Api::UsersController < ApplicationController
       end
   end
 
+  def index
+    @fastest = User.maximum(:)
+  end
+
   def show
     @user = User.find(params[:id]);
     render :show
