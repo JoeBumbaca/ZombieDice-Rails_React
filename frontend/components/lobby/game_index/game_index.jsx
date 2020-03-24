@@ -12,7 +12,7 @@ class GameIndex extends React.Component {
 
   render() {
     const gamesList = this.props.games.map((game) => {
-      return <GameIndexItem game={game} key={game.id}/>;
+      return <GameIndexItem game={game} key={game.id} openModal={this.props.openModal}/>;
     })
     return (
       <div className='game-list-container'>

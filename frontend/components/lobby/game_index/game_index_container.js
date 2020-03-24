@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import GameIndex from './game_index';
 import { getGames } from '../../../actions/game_actions';
+import { openModal } from '../../../actions/modal_actions';
 
 const MSP = (state) => {
   return ({
@@ -10,7 +11,8 @@ const MSP = (state) => {
 
 const MDP = (dispatch) => {
   return({
-    getGames: () => dispatch(getGames())
+    getGames: () => dispatch(getGames()),
+    openModal: (type) => dispatch(openModal(type))
   })
 };
 

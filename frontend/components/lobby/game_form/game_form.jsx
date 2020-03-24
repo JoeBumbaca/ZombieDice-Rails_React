@@ -23,6 +23,9 @@ class GameForm extends React.Component {
   };
 
   handleSubmit() {
+    if (this.state.private === 'true') {
+      this.props.openModal('make-private')
+    }
     this.props.createGame(this.state)
     this.setState({
       name: '',

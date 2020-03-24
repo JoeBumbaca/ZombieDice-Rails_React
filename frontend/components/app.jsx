@@ -10,13 +10,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => {
   return(
     <div>
+      <Route path='/' component={ModalContainer} />
       <Switch>
         <ProtectedRoute path='/game/:id' component={GameContainer}/>
         <ProtectedRoute path='/lobby' component={LobbyContainer} />
         <ProtectedRoute path='/profile' component={ProfileContainer} />
         <AuthRoute exact path='/' component={SplashContainer} />
       </Switch>
-      <AuthRoute exact path='/' component={ModalContainer} />
     </div>
   )
 };
