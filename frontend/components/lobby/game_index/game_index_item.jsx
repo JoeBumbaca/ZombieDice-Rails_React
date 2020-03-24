@@ -2,18 +2,26 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 const GameIndexItem = (props) => {
-  // const privateGame = <input type="text" placeholder='Game Password'/>
-
+  
   const handleClick = (e) => {
     e.preventDefault();
     props.history.push(`/game/${props.game.id}`);
   };
+
+  const privateModal = (e) => {
+    e.preventDefault();
+    console.log('This game is private');
+  }
+
+  const name = props.game.private ? <li className='game-list-name'>{props.game.name} <i className="fas fa-user-lock"></i></li> : <li className='game-list-name'>{props.game.name}</li>
+
+  const clickHandler = props.game.private ? privateModal : handleClick;
+
   return (
     <div className='game-list-item'>
-      <li className='game-list-name'>{props.game.name}</li>
+      {name}
       <li>Number of Players: {props.game.num_players}</li>
-      {/* {props.game.private ? privateGame : ''} */}
-      <button className='join-button' onClick={handleClick}>Join Game</button>
+      <button className='join-button' onClick={clickHandler}>Join Game</button>
     </div>
   )
 };

@@ -12,7 +12,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @fastest = User.maximum(:)
+    @users = User.all
+    render :index
   end
 
   def show
