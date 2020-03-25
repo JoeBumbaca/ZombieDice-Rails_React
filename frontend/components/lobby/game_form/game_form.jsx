@@ -7,32 +7,41 @@ class GameForm extends React.Component {
       name: '',
       num_players: 2,
       private: false,
-      creator_id: this.props.creator,
+      creator_id: this.props.creator
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.setState = this.setState.bind(this);
   };
 
   handleChange(field) {
     return (e) => {
       this.setState({
         [field]: e.currentTarget.value
+      }, () => {
+          if (this.state.private === 'true') {
+            this.props.openModal('make-private')
+          }
       })
     }
   };
 
   handleSubmit() {
     if (this.state.private === 'true') {
-      this.props.openModal('make-private')
+      const password = localStorage.getItem('roomPassword')
+      this.setState({
+        password_digest: password
+      }, () => this.props.createGame(this.state))
     }
-    this.props.createGame(this.state)
-    this.setState({
+
+    setTimeout(() => this.setState({
       name: '',
       num_players: 2,
       private: false,
       creator_id: this.props.creator
-    })
+    }, () => localStorage.removeItem('roomPassword')), 10)
+    
   };
 
   render() {
@@ -88,6 +97,7 @@ class GameForm extends React.Component {
                     name='private'
                     value='false'
                     onChange={this.handleChange('private')}
+                    
                   />
                 </label>
               </label>

@@ -6,7 +6,6 @@ import { openModal } from '../../../actions/modal_actions';
 const MSP = (state) => {
   return ({
     creator: state.session.currentUser,
-    modal: state.ui.modal ? true : false
   })
 };
 

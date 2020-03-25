@@ -54,8 +54,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  color: goldenrod;
-  text-decoration: underline;
+  color:black;
 }
 
 .leaderboard-header {
@@ -64,7 +63,16 @@
 
 .fastest-win {
   border-bottom: 2px solid red;
-  height: 50%;
+  height: 32%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 150%;
+  padding-top: 1%;
+}
+
+.most-wins {
+  border-bottom: 2px solid red;
+  height: 32%;
   width: 100%;
   box-sizing: border-box;
   font-size: 150%;
@@ -72,7 +80,7 @@
 }
 
 .most-brains {
-  height: 50%;
+  height: 32%;
   width: 100%;
   box-sizing: border-box;
   font-size: 150%;
@@ -88,4 +96,9 @@
 
 .grid-header {
   color: black;
+}
+
+.leader-board-item {
+  font-size: 150%;
+  color: goldenrod;
 }

@@ -11,9 +11,14 @@ class GameIndex extends React.Component {
   }
 
   render() {
-    const gamesList = this.props.games.map((game) => {
-      return <GameIndexItem game={game} key={game.id} openModal={this.props.openModal}/>;
-    })
+    let gamesList
+    if (this.props.games[0]) {
+      gamesList = this.props.games.map((game) => {
+        return <GameIndexItem game={game} key={game.id} openModal={this.props.openModal}/>;
+      })
+    } else {
+      gamesList = <div className='game-list-item'> No games to join </div>
+    }
     return (
       <div className='game-list-container'>
         <h1 className='game-list-header'>Join an Existing Game!</h1>
