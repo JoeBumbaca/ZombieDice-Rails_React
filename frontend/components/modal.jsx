@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import LoginFormContainer from './session/login_container';
 import SignupFormContainer from './session/signup_container';
-import PrivateGameContainer from './game/private_game_form_container';
+import CheckPrivateGameContainer from './game/private_game_form_container';
 import MakePrivateGameContainer from './game/make_private_game_form_container';
 
 function Modal({ modal, closeModal }) {
@@ -19,7 +19,7 @@ function Modal({ modal, closeModal }) {
       component = <SignupFormContainer />;
       break;
     case 'check-private':
-      component = <PrivateGameContainer />;
+      component = <CheckPrivateGameContainer />;
       break;
     case 'make-private':
       component = <MakePrivateGameContainer />;

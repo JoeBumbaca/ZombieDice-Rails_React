@@ -26,7 +26,6 @@ class MakePrivateGameForm extends React.Component {
   };
 
   render() {
-    console.log(this.state.password)
     return (
       <div className='private-session'>
         <h1 className='session-header'>Please Enter a Password</h1>

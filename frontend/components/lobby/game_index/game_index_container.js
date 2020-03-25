@@ -12,7 +12,7 @@ const MSP = (state) => {
 const MDP = (dispatch) => {
   return({
     getGames: () => dispatch(getGames()),
-    openModal: (type) => dispatch(openModal(type))
+    openModal: (type, gameId) => dispatch(openModal(type, gameId))
   })
 };
 
