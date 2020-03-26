@@ -31,8 +31,18 @@ class GameChat extends React.Component {
       })
   }
 
+  scrollToBottom() {
+    let bottom = document.getElementById('bottom');
+    bottom.scrollIntoView({behavior: 'smooth'})
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
   componentDidMount() {
     this.props.getGame(this.props.gameId)
+    this.scrollToBottom();
   }
 
   render() {
@@ -42,17 +52,24 @@ class GameChat extends React.Component {
         return <ChatMessage key={idx} message={message}/>
       })
     }
-    return(
+    return (
       <div className='game-chat'>
-        <section className='messages'>
-          {messages}
-        </section>
-        <form className='chat-form' onSubmit={this.handleSubmit}>Chat!
-          <input type="text" className='chat-box' onChange={this.handleChange} value={this.state.body}/>
-          <input type="submit" value='Send' className='chat-send'/>
+          <section className='messages'>
+            {messages}
+            <div id='bottom'></div>
+          </section>
+        <form className='chat-form' onSubmit={this.handleSubmit}>
+          Chat!
+          <input
+            type='text'
+            className='chat-box'
+            onChange={this.handleChange}
+            value={this.state.body}
+          />
+          <input type='submit' value='Send' className='chat-send' />
         </form>
       </div>
-    )
+    );
   };
 };
 
