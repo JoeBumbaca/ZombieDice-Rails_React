@@ -1,13 +1,15 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
+import GameChatContainer from './game_chat/game_chat_container';
+import GamePlayContainer from './game_play/game_play_container';
 
-const Game = () => {
+const Game = (props) => {
   return(
     <div className='game-container'>
       <HeaderContainer />
       <div className='game'>
-        <div className='game-play'>Play Area</div>
-        <div className='game-chat'>Chat Area</div>
+        <GamePlayContainer gameId={props.match.params.id}/>
+        <GameChatContainer gameId={props.match.params.id}/>
       </div>
     </div>
   )

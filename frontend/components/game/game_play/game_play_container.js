@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Game from './game';
+import GamePlay from './game_play';
 
-const MSP = (state, ownProps) => {
+const MSP = (state) => {
   return ({
 
   })
@@ -13,4 +13,4 @@ const MDP = (dispatch) => {
   })
 };
 
-export default connect(MSP, MDP)(Game)
+export default connect(MSP, MDP)(GamePlay);

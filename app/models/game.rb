@@ -12,5 +12,12 @@
 #  password_digest :string
 #
 class Game < ApplicationRecord
+  
   validates :num_players, :name, presence: true
+
+  has_many :messages,
+  class_name: :Message,
+  foreign_key: :game_id,
+  dependent: :destroy
+
 end

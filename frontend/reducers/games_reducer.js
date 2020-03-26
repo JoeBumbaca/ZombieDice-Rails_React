@@ -6,7 +6,7 @@ const gameReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_GAME:
-      newState[action.game.id] = action.game
+      newState[action.payload.game.id] = action.payload.game
       return newState;
     case RECEIVE_ALL_GAMES:
       return action.games

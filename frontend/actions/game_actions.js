@@ -3,10 +3,10 @@ import * as GAMEUtil from '../util/game_util';
 export const RECEIVE_GAME = "RECEIVE_GAME"
 export const RECEIVE_ALL_GAMES = "RECEIVE_ALL_GAMES"
 
-export const receiveGame = (game) => {
+export const receiveGame = (payload) => {
   return ({
     type: RECEIVE_GAME,
-    game
+    payload
   })
 };
 
