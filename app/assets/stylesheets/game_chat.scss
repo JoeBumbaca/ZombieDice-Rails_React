@@ -22,7 +22,8 @@
 
 .chat-message {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
   font-size: 125%;
   width: 95%;
   background-color: gray;
@@ -47,6 +48,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  height: 93%;
   overflow-x: auto;
+}
+
+.message-name {
+  margin: 0 2%;
 }

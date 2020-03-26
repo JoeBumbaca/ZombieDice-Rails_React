@@ -15,7 +15,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:user_id, :game_id, :body)
+    params.require(:message).permit(:user_id, :game_id, :body, :user_name)
   end
 
 end

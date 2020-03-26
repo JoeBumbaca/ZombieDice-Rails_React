@@ -9,6 +9,7 @@ class GameChat extends React.Component {
       body: '',
       game_id: this.props.gameId,
       user_id: this.props.userId,
+      user_name: this.props.userName
     }
 
     this.handleChange = this.handleChange.bind(this);

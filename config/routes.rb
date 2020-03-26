@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :user_stats, only: [:create, :destroy, :update]
     resources :games, only: [:create, :show, :index, :destroy]
     resources :messages, only: [:create]
+    resources :channels, only: [:index, :create]
   end
+
+  mount ActionCable.server => '/cable'
 
 end

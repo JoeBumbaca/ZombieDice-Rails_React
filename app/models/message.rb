@@ -8,6 +8,7 @@
 #  body       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_name  :string           not null
 #
 class Message < ApplicationRecord
 
