@@ -44,6 +44,19 @@ class GameChat extends React.Component {
   componentDidMount() {
     this.props.getGame(this.props.gameId)
     this.scrollToBottom();
+    App.cable.subscriptions.create(
+      { channel: 'MessagesChannel',
+        room: this.state.game_id },
+      {
+        connected: () => {
+          console.log(`Connected to channel ${this.state.game_id}`)
+        },
+        received: data => {
+          console.log('hello')
+          this.props.receiveMessage(data)
+        }
+      }
+    )
   }
 
   render() {

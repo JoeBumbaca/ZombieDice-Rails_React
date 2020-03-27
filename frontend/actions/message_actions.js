@@ -11,6 +11,6 @@ export const receiveMessage = (message) => {
 
 export const createMessage = message => dispatch => {
   APIUtil.postMessage(message)
-    .then(message => dispatch(receiveMessage(message)))
+    // .then(message => dispatch(receiveMessage(message)))
 };
 

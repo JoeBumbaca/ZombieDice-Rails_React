@@ -6,7 +6,14 @@ class Api::MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      render :show
+      socket =  { id: @message.id,
+                  body: @message.body,
+                  user_id: @message.user_id,
+                  game_id: @message.game_id,
+                  user_name: @message.user_name,
+                  createdAt: @message.created_at
+                  }
+      ActionCable.server.broadcast("game_room-#{@message.game_id}:messages", socket)
     else
       render json: {}
     end
