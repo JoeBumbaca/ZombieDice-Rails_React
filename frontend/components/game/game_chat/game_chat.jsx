@@ -59,6 +59,10 @@ class GameChat extends React.Component {
     )
   }
 
+  componentWillUnmount() {
+    this.props.clearMessages();
+  }
+
   render() {
     let messages;
     if (this.props.messages) {

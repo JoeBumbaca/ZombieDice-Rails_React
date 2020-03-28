@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import GameChat from './game_chat';
 import { createMessage } from '../../../actions/message_actions';
 import { getGame } from '../../../actions/game_actions';
-import { receiveMessage } from '../../../actions/message_actions';
+import { receiveMessage, clearMessages } from '../../../actions/message_actions';
 
 const MSP = (state, ownProps) => {
   return {
@@ -17,7 +17,8 @@ const MDP = (dispatch) => {
   return ({
     createMessage: (message) => dispatch(createMessage(message)),
     getGame: (id) => dispatch(getGame(id)),
-    receiveMessage: (message) => dispatch(receiveMessage(message))
+    receiveMessage: (message) => dispatch(receiveMessage(message)),
+    clearMessages: () => dispatch(clearMessages())
   })
 };
 

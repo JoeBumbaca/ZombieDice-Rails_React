@@ -8,6 +8,19 @@ class GameIndex extends React.Component {
 
   componentDidMount() {
     this.props.getGames();
+    App.cable.subscriptions.create(
+      {
+        channel: 'GamesChannel',
+      },
+      {
+        connected: () => {
+          console.log(`Connected to Games Channel`)
+        },
+        received: () => {
+          this.props.getGames();
+        }
+      }
+    )
   }
 
   render() {

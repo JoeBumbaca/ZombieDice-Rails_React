@@ -27,14 +27,16 @@ class GameForm extends React.Component {
     }
   };
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     if (this.state.private === 'true') {
       const password = localStorage.getItem('roomPassword')
       this.setState({
         password_digest: password
       }, () => this.props.createGame(this.state))
+    } else {
+      this.props.createGame(this.state)
     }
-
     setTimeout(() => this.setState({
       name: '',
       num_players: 2,

@@ -14,7 +14,14 @@ class Api::GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      render :show
+      socket =  { id: @game.id,
+                  creator_id: @game.creator_id,
+                  num_players: @game.num_players,
+                  private: @game.private,
+                  name: @game.name,
+                  password_digest: @game.password_digest
+                  }
+      ActionCable.server.broadcast("lobby", socket)
     else
       render json: @game.errors.full_messages, status: 422
     end

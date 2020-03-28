@@ -19,7 +19,6 @@ export const receiveGames = (games) => {
 
 export const createGame = (game) => (dispatch) => {
   GAMEUtil.createGame(game)
-    .then((game) => dispatch(receiveGame(game)))
 };
 
 export const getGames = () => (dispatch) => {
