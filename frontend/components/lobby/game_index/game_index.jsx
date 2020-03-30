@@ -13,9 +13,6 @@ class GameIndex extends React.Component {
         channel: 'GamesChannel',
       },
       {
-        connected: () => {
-          console.log(`Connected to Games Channel`)
-        },
         received: () => {
           this.props.getGames();
         }

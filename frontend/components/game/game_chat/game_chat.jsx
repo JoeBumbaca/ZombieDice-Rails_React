@@ -48,11 +48,7 @@ class GameChat extends React.Component {
       { channel: 'MessagesChannel',
         room: this.state.game_id },
       {
-        connected: () => {
-          console.log(`Connected to channel ${this.state.game_id}`)
-        },
         received: data => {
-          console.log('hello')
           this.props.receiveMessage(data)
         }
       }

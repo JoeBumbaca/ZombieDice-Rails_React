@@ -10,7 +10,6 @@ const GameIndexItem = (props) => {
 
   const privateJoin = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget.parent);
     props.openModal('check-private', props.game.id);
   }
 
