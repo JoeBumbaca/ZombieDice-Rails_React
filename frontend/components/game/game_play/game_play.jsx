@@ -1,16 +1,20 @@
 import React from 'react';
 import Game from '../../../game_logic/game';
 import GameScores from './game_scores';
+import { withRouter } from 'react-router-dom';
 
 class GamePlay extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      game: null
+      game: null,
+      currentPlayer: null,
+      full: false
     }
 
     this.startGame = this.startGame.bind(this);
+    this.endGame = this.endGame.bind(this);
   };
 
   startGame() {
@@ -19,23 +23,29 @@ class GamePlay extends React.Component {
     })
   };
 
+  endGame() {
+    this.props.deleteGame(this.props.gameId)
+    this.props.history.push('/lobby')
+  }
+
   componentDidMount() {
+    console.log(this.props)
   }
 
   render() {
-    console.log(this.state);
+    const buttonText = this.state.game ? 'End Game' : 'Start Game';
+    const buttonFunction = this.state.game ? this.endGame : this.startGame
     return(
       <div className='game-play'>
         <GameScores game={this.state.game}/>
-        <canvas id='play-area' width='100%' height='800'>
-
-        </canvas>
+        <section className='play-area'>
+        </section>
         <section className='game-controls'>
-          <button className='start-game' onClick={this.startGame}>Start Game</button>
+          <button className='start-game' onClick={buttonFunction}>{buttonText}</button>
         </section>
       </div>
     )
   }
 };
 
-export default GamePlay;
+export default withRouter(GamePlay);

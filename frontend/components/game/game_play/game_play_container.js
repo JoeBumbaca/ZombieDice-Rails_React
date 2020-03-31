@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import GamePlay from './game_play';
+import { deleteGame } from '../../../actions/game_actions';
 
 const MSP = (state) => {
   return ({
@@ -9,7 +10,7 @@ const MSP = (state) => {
 
 const MDP = (dispatch) => {
   return ({
-
+    deleteGame: (id) => dispatch(deleteGame(id))
   })
 };
 
