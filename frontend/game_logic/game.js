@@ -4,19 +4,14 @@ import Player from './player';
 class Game {
   constructor(numPlayers, playerNames) {
     this.numPlayers = numPlayers;
-    this.playerNames = playerNames;
     this.players = [];
     this.cup = new Cup();
+    this.round_num = 1;
 
-    this.createPlayers();
-  };
-
-  createPlayers() {
-    this.playerNames.forEach(player => {
-      this.players.push( new Player(player))
+    playerNames.forEach(player => {
+      this.players.push(new Player(player))
     })
-  }
-
+  };
 
 };
 

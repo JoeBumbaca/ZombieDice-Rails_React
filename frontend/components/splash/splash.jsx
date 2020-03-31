@@ -6,9 +6,9 @@ const Splash = (props) => {
     <div className='splash'>
       <div className='header'>
         <h1 className='header-title'>
-          <i className='fas fa-dice'></i>
-          Zombie Dice
-          <i className='fas fa-dice'></i>
+          <img src={window.images.dice} height='100' width='100'/>
+          Zombie Dice ™
+          <img src={window.images.dice} height='100' width='100' />
         </h1>
         <div className='header-nav'>
           <button onClick={() => props.openModal('login')}>Log In</button>
@@ -31,6 +31,11 @@ const Splash = (props) => {
           in a single round.
         </div>
       </div>
+      <section className='footer'>
+        <p>
+          Zombie Dice is a registered trademark of Steve Jackson Games.  If you like playing please visit them at <a href="http://www.sjgames.com/">www.sjgames.com</a> <br/> Steve Jackson Games is in no way, shape or form affilitaed with this project.  
+        </p>
+      </section>
     </div>
   );
 };
