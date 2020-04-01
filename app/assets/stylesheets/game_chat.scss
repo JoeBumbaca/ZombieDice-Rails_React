@@ -6,18 +6,25 @@
 
 .chat-form {
   display: flex;
-  margin-bottom: 2%;
-  width: 98%;
-  height: 5%;
+  box-sizing: border-box;
+  padding-bottom: 2% 0;
+  width: 100%;
+  height: 6%;
   font-size: 150%;
   align-items: center;
   justify-content: center;
+  background-color: gray;
+  color: black;
+  border-top: 2px solid red;
+  border-bottom: 1px solid red;
+  border-right: 1px solid red;
 }
 
 .chat-box {
   width: 70%;
   margin: 0 3%;
   font-size: 100%;
+  border: 1px solid black;
 }
 
 .chat-message {
@@ -29,7 +36,8 @@
   background-color: gray;
   color: black;
   border: 1px solid red;
-  border-radius: 2px;
+  border-radius: 5px;
+  margin-top: .25%;
 }
 
 .chat-send {
@@ -45,11 +53,14 @@
 }
 
 .messages {
+  padding-top: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 93%;
+  height: 94%;
   overflow-y: scroll;
+  border-right: 1px solid red;
+  border-top: 1px solid red;
 }
 
 .message-name {

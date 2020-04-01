@@ -10,7 +10,7 @@ class GamePlay extends React.Component {
     this.state = {
       game: null,
       currentPlayer: null,
-      full: false
+      num_players: 0
     }
 
     this.startGame = this.startGame.bind(this);
@@ -19,7 +19,7 @@ class GamePlay extends React.Component {
 
   startGame() {
     this.setState({
-      game: new Game(4, ['Joe', 'Michelle', 'Nico', 'Donovan'])
+      game: new Game(8, ['Joe', 'Michelle', 'Nico', 'Donovan', 'Roxy', 'Hunny', 'Danny', 'Dave'])
     })
   };
 
@@ -29,19 +29,58 @@ class GamePlay extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    this.props.getGame(this.props.gameId)
   }
 
   render() {
     const buttonText = this.state.game ? 'End Game' : 'Start Game';
     const buttonFunction = this.state.game ? this.endGame : this.startGame
+    let gameControls;
+    if(this.props.game) {
+      if (this.props.game.creator_id === this.props.currentUser) {
+        gameControls = <button className='start-game' onClick={buttonFunction}>{buttonText}</button>
+      } else {
+        gameControls = <section className='game-images'>
+          <img
+            className='game-zombie'
+            src={window.images.zombie1}
+            alt='zombie'
+          />
+          <img
+            className='game-zombie'
+            src={window.images.zombie2}
+            alt='zombie'
+          />
+          <img
+            className='game-zombie'
+            src={window.images.zombie3}
+            alt='zombie'
+          />
+          <img
+            className='game-zombie'
+            src={window.images.zombie4}
+            alt='zombie'
+          />
+          <img
+            className='game-zombie'
+            src={window.images.zombie5}
+            alt='zombie'
+          />
+          <img
+            className='game-zombie'
+            src={window.images.zombie6}
+            alt='zombie'
+          />
+          </section>
+      }
+    }
     return(
       <div className='game-play'>
         <GameScores game={this.state.game}/>
         <section className='play-area'>
         </section>
         <section className='game-controls'>
-          <button className='start-game' onClick={buttonFunction}>{buttonText}</button>
+          {gameControls}
         </section>
       </div>
     )
