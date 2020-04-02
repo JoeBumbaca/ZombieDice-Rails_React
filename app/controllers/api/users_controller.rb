@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
         stats = UserStat.create({user_id: @user.id})
         login(@user)
         render :show
-      else 
+      else
         render json: @user.errors.full_messages, status: 422
       end
   end

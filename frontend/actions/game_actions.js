@@ -1,7 +1,8 @@
 import * as GAMEUtil from '../util/game_util';
 
-export const RECEIVE_GAME = "RECEIVE_GAME"
-export const RECEIVE_ALL_GAMES = "RECEIVE_ALL_GAMES"
+export const RECEIVE_GAME = "RECEIVE_GAME";
+export const RECEIVE_ALL_GAMES = "RECEIVE_ALL_GAMES";
+export const REMOVE_GAME = 'REMOVE_GAME';
 
 export const receiveGame = (payload) => {
   return ({
@@ -17,6 +18,13 @@ export const receiveGames = (games) => {
   });
 };
 
+export const removeGame = (game) => {
+  return({
+    type: REMOVE_GAME,
+    game
+  })
+} ; 
+
 export const createGame = (game) => (dispatch) => {
   GAMEUtil.createGame(game)
 };
@@ -31,3 +39,7 @@ export const getGame = (id) => (dispatch) => {
     .then((game) => dispatch(receiveGame(game)))
 };
 
+export const deleteGame = (id) => (dispatch) => {
+  GAMEUtil.destroyGame(id)
+    .then((game) => dispatch(removeGame(game)))
+};

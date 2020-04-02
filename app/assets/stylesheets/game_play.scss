@@ -1,0 +1,72 @@
+.game-play {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-ticker {
+  width: 100%;
+  height: 12%;
+  color: black;
+  border: 1px solid red;
+  box-sizing: border-box;
+  background-color: gray;
+  font-size: 145%;
+}
+
+.score-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.score-list-item {
+  width: 12%;
+  margin: 5px;
+  border: 2px solid goldenrod;
+  border-radius: 3px;
+}
+
+.play-area {
+  width: 100%;
+  height: 73%;
+  border:  1px solid red;
+  background-color: red;
+  background-image: radial-gradient( black, maroon, black);
+  opacity: 0.55;
+  box-sizing: border-box;
+}
+
+.game-controls {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  box-sizing: border-box;
+  background-color: gray;
+  // background-color: black;
+}
+
+.header-item {
+  display: inline-block;
+  margin: 10px;
+}
+
+.start-game {
+  border: 1px solid white;
+  color: white;
+  height: 45%;
+  width: 25%;
+  font-size: 130%;
+}
+
+.game-zombie {
+  height: 90%;
+  width: 15%
+}
+
+.game-images {
+  height: 100%;
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { RECEIVE_GAME, RECEIVE_ALL_GAMES } from '../actions/game_actions';
+import { RECEIVE_GAME, RECEIVE_ALL_GAMES, REMOVE_GAME } from '../actions/game_actions';
 
 const gameReducer = (state = {}, action) => {
   Object.freeze(state)
@@ -10,6 +10,9 @@ const gameReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_ALL_GAMES:
       return action.games
+    case REMOVE_GAME:
+      delete newState[action.game.id]
+      return newState;
     default:
       return state;
   };

@@ -21,3 +21,10 @@ export const fetchGame = (id) => {
     url: `/api/games/${id}`
   }))
 };
+
+export const destroyGame = (id) => {
+  return ($.ajax({
+    method: 'DELETE',
+    url: `/api/games/${id}`
+  }))
+}
