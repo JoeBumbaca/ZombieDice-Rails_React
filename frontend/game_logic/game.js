@@ -16,9 +16,11 @@ class Game {
   };
 
   beginRound() {
+    // console.log('The round has begun!')
     let currentPlayer = this.players[0];
     this.cup = new Cup();
-    // console.log({currentPlayer: currentPlayer, cup: this.cup})
+
+    currentPlayer.takeTurn(this.cup);
   }
 };
 
