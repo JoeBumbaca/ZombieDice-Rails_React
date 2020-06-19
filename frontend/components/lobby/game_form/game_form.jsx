@@ -1,5 +1,4 @@
 import React from 'react';
-
 class GameForm extends React.Component {
   constructor(props) {
     super(props)
