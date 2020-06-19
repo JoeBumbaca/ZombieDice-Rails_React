@@ -6,16 +6,37 @@ class Player {
     this.turnTotals = { brains: 0, blasts: 0, runner: 0 };
   }
 
-  takeTurn(cup) {
+  beginTurn(cup) {
     this.cup = cup;
-    let currentDice = this.selectDice();
-    let currentRoll = this.rollDice(currentDice);
-    console.log({currentDice: currentDice, roll: currentRoll, cup: this.cup});
-    // this.assessRoll(currentRoll);
+    this.takeTurn();
   }
 
-  selectDice() {
-    let selectedDie = [];
+  takeTurn() {
+    let currentDice = this.selectDice();
+    let currentRoll = this.rollDice(currentDice);
+    console.log(currentRoll);
+    this.assessRoll(currentRoll.roll);
+    this.continueTurn(currentRoll.runnerDice);
+  }
+
+  continueTurn(runners) {
+    let currentDice = this.selectDice(runners);
+    let currentRoll = this.rollDice(currentDice);
+    console.log(currentRoll);
+    this.assessRoll(currentRoll.roll);
+    this.endTurn()
+  }
+
+  endTurn() {
+    this.score += this.turnTotals.brains;
+    console.log({ name: this.name, score: this.score })
+  }
+
+  selectDice(runners = []) {
+    let selectedDie = [].concat(runners);
+    if (this.turnTotals.runner > 0) {
+      this.turnTotals.runner = 0;
+    }
     let i = 0;
     while (selectedDie.length < 3) {
       let rand = Math.floor(Math.random() * 10000) % 13;
@@ -31,15 +52,33 @@ class Player {
   }
 
   rollDice(dice) {
-    let roll = [];
+    let rollResult = {roll: [], runnerDice: []}
     dice.forEach(die => {
       let side = Math.floor(Math.random() * 10000) % 6;
-      roll.push(die.sides[side]);
+      rollResult.roll.push(die.sides[side]);
+      if (die.sides[side] === 'runner') {
+        rollResult.runnerDice.push(die);
+      }
     })
-    return roll;
+    return rollResult;
   }
 
-  // assessRoll()
+  assessRoll(rolls) {
+    rolls.forEach(roll => {
+      switch(roll) {
+        case 'brain':
+          this.turnTotals.brains += 1;
+          break;
+        case 'runner':
+          this.turnTotals.runner += 1;
+          break;
+        case 'shotgun':
+          this.turnTotals.blasts += 1;
+      }
+    });
+
+    console.log(this.turnTotals);
+  }
 
 };
 

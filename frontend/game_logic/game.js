@@ -16,12 +16,13 @@ class Game {
   };
 
   beginRound() {
-    // console.log('The round has begun!')
-    let currentPlayer = this.players[0];
-    this.cup = new Cup();
-
-    currentPlayer.takeTurn(this.cup);
+    this.players.forEach(currentPlayer => {
+      this.cup = new Cup();
+      currentPlayer.beginTurn(this.cup);
+    })
   }
+
+
 };
 
 export default Game;
