@@ -14,7 +14,6 @@ class Player {
   takeTurn() {
     let currentDice = this.selectDice();
     let currentRoll = this.rollDice(currentDice);
-    console.log(currentRoll);
     this.assessRoll(currentRoll.roll);
     this.continueTurn(currentRoll.runnerDice);
   }
@@ -22,14 +21,12 @@ class Player {
   continueTurn(runners) {
     let currentDice = this.selectDice(runners);
     let currentRoll = this.rollDice(currentDice);
-    console.log(currentRoll);
     this.assessRoll(currentRoll.roll);
     this.endTurn()
   }
 
   endTurn() {
     this.score += this.turnTotals.brains;
-    console.log({ name: this.name, score: this.score })
   }
 
   selectDice(runners = []) {
@@ -76,8 +73,6 @@ class Player {
           this.turnTotals.blasts += 1;
       }
     });
-
-    console.log(this.turnTotals);
   }
 
 };
