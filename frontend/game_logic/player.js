@@ -71,6 +71,10 @@ class Player {
           break;
         case 'shotgun':
           this.turnTotals.blasts += 1;
+          if (this.turnTotals.brains > 2) {
+            this.turnTotals.brains = 0;
+            this.endTurn();
+          }
       }
     });
   }
